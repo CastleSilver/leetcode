@@ -4,15 +4,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        preNum = nums[0]
+        #맨 뒤에건 생략
+        index = len(nums) - 2
+        st = nums[index+1]
         k = 1
-        
-        for n in range(1, len(nums)):
-            if preNum == nums[k]:
-                del nums[k]
-                k -= 1
+        while index >= 0:
+            if nums[index] == st:
+                del nums[index]
             else:
-                preNum = nums[k]
-            k += 1
+                st = nums[index]
+                k += 1
+            index -= 1
         return k
-                
