@@ -10,8 +10,7 @@ class Solution(object):
         for n in range(len(prices) - 2, -1, -1):
             if prices[n] < st:
                 profit += st - prices[n]
-                st = prices[n]
-            else:
-                st = prices[n]
+                
+            st = prices[n]
         
         return profit
